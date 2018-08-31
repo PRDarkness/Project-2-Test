@@ -1,0 +1,35 @@
+baseURL = "http://localhost:1313/"
+languageCode = "en-us"
+title = "Zephyr"
+theme = "hugo-lamp"
+googleAnalytics = "UA-XXX-X"          # Google Analytics UA number
+
+[params]
+  subtitle = "Welcome to our blog"
+  author = "Huy Nguyen"
+  logo = "/img/avatar.jpg"
+  description = "A light responsive Hugo AMP theme for blogger"
+  paginate = 10
+
+  # Publisher
+  ## adsensePublisher = "ca-pub-XXX"    # Required if you want to include Google Adsense
+  adsenseSlot = "XXX"                   # Required slot to display ads
+  adsenseSlotSticky = "XXX"             # Enables sticky ads feature, value maybe the same with adsenseSlot, remove if you don't want display sticky ads
+
+  # SEO configs
+  seotitle = "Hugo Blog Title (SEO Version)"
+  googleSiteVerification = "google_site_verification_code"    # Google Webmaster
+  msValidate = "bing_site_verification_code"                  # Bing Webmaster
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  
+[[menu.main]]
+  name = "Post"
+  weight = 1
+  identifier = "post"
+  url = "/post/"
+  
+
+  
