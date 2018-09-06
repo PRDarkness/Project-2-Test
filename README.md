@@ -1,4 +1,4 @@
-How to get in the server:
+<h1> How to get in the server: </h1>
 
 https://gohugo.io/getting-started/quick-start/
 
@@ -11,4 +11,10 @@ Hugo server
 After you can verify it through localhost1313
 
 
-If you don't know where the file is here's the link https://github.com/CSUN-SeniorDesign/zephyr-blog 
+If you don't know where the file is here's the link https://github.com/CSUN-SeniorDesign/zephyr-blog
+
+<h1> Team Members: </h1>
+ - Neel Patel <br>
+ - Tonny Wong <br>
+ - Hayden Wilcox <br>
+ - Daniel Hirahoka <br>
