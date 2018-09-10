@@ -13,5 +13,8 @@
   "license": "MIT",
   "devDependencies": {
     "html-minifier": "^3.5.20"
+  },
+  "dependencies": {
+    "hoek": "^5.0.4"
   }
 }
