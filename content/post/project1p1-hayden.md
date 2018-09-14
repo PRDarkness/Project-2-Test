@@ -9,8 +9,8 @@ draft: false
 <body>
 <h3>Hayden Wilcox:</h3><br>
 Assigned Task: Research Ansible and Practice various components and concepts:<br>
-	<small>&emsp; &emsp; &emsp; &emsp; ·  Issues arose when attempting to update Oracle Virtual Box, had to delete previous Ubuntu virtual machine and reinstall. </small><br>
-	<small>&emsp; &emsp; &emsp; &emsp; ·  Reinstalled git related commands and re-accessed GitHub to download branches</small><br>
+	<p style="margin-left:4em> ·  Issues arose when attempting to update Oracle Virtual Box, had to delete previous Ubuntu virtual machine and reinstall.<br>
+							   ·  Reinstalled git related commands and re-accessed GitHub to download branches<br></p>
 <small> o &emsp; Due to adding two-factor authentification onto GitHub, I had to learn how to generate a Personal Access Token to allow myself access onto the site via ssh: </small><br>
 	<small>&emsp; &emsp; &emsp; &emsp;·   Cloned branch to be used with Ansible </small><br>
 	<small>&emsp; &emsp; &emsp; &emsp;·   Setup a personal AWS ubuntu server, using default settings. </small><br>
