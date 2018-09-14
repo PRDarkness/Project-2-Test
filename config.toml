@@ -6,7 +6,7 @@ googleAnalytics = "UA-XXX-X"          # Google Analytics UA number
 
 [params]
   subtitle = "Welcome to our blog"
-  author = "Huy Nguyen"
+  author = "Tonny Wong"
   logo = "/img/avatar.jpg"
   description = "A light responsive Hugo AMP theme for blogger"
   paginate = 10
