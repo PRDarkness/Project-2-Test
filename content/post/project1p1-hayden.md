@@ -32,6 +32,6 @@ draft: false
 			·   Had a few issues with formatting, but these were fixed with a web based formatting software
 Made some slight edits to the playbook to fix a connection issue, adding ports etc. but ultimately was unable to get the playbook to work. The screenshot provided is the current error being displayed at the time of writing:
 
-![Screenshot](/img/sh-hayden.png) 
+![alt text](https://github.com/CSUN-SeniorDesign/zephyr-blog/blob/master/themes/hugo-lamp/static/img/sh-hayden.png "Screenshot Hayden")
 	
 Side note: learned a few shortcuts when using vim to make editing files easier and quicker, such as “dG” to clear the entire file, and “u” to undo actions.
