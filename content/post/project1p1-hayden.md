@@ -6,6 +6,7 @@ tags: ["tagA", "tagB"]
 date: 2018-09-13T11:05:21-07:00
 draft: false
 ---
+<body>
 <h3>Hayden Wilcox:</h3><br>
 Assigned Task: Research Ansible and Practice various components and concepts:<br>
 	<small>&emsp; &emsp; &emsp; &emsp; ·  Issues arose when attempting to update Oracle Virtual Box, had to delete previous Ubuntu virtual machine and reinstall. </small><br>
@@ -32,4 +33,4 @@ Assigned Task: Research Ansible and Practice various components and concepts:<br
 Made some slight edits to the playbook to fix a connection issue, adding ports etc. but ultimately was unable to get the playbook to work. The screenshot provided is the current error being displayed at the time of writing:<br>
 	![Screenshot](/img/sh-hayden.png) <br>
 Side note: learned a few shortcuts when using vim to make editing files easier and quicker, such as “dG” to clear the entire file, and “u” to undo actions.
-
+</body>
