@@ -6,7 +6,6 @@ tags: ["tagA", "tagB"]
 date: 2018-09-13T11:05:26-07:00
 draft: false
 ---
-
 	<h3>Daniel Hirahoka:</h3><br>
 	&emsp; &emsp; For Project 1 I was assigned the task to assist with deleting the Route53 information in order to prepare for Project 1. 
 		After doing so I was additionally tasked with working and researching Ansible in order to complete the Ansible portion of the Project. 
