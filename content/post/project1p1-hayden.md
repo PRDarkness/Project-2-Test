@@ -6,12 +6,10 @@ tags: ["tagA", "tagB"]
 date: 2018-09-13T11:05:21-07:00
 draft: false
 ---
-<html>
-<body>
 <h3>Hayden Wilcox:</h3><br>
 Assigned Task: Research Ansible and Practice various components and concepts:<br>
-	<p style="margin-left:4em"> ·  Issues arose when attempting to update Oracle Virtual Box, had to delete previous Ubuntu virtual machine and reinstall.<br>
-							   ·  Reinstalled git related commands and re-accessed GitHub to download branches<br></p>
+	<p style="margin-left:30px"> ·  Issues arose when attempting to update Oracle Virtual Box, had to delete previous Ubuntu virtual machine and reinstall.<br>
+							    ·  Reinstalled git related commands and re-accessed GitHub to download branches<br></p>
 <small> o &emsp; Due to adding two-factor authentification onto GitHub, I had to learn how to generate a Personal Access Token to allow myself access onto the site via ssh: </small><br>
 	<small>&emsp; &emsp; &emsp; &emsp;·   Cloned branch to be used with Ansible </small><br>
 	<small>&emsp; &emsp; &emsp; &emsp;·   Setup a personal AWS ubuntu server, using default settings. </small><br>
@@ -34,5 +32,3 @@ Assigned Task: Research Ansible and Practice various components and concepts:<br
 Made some slight edits to the playbook to fix a connection issue, adding ports etc. but ultimately was unable to get the playbook to work. The screenshot provided is the current error being displayed at the time of writing:<br>
 	![Screenshot](/img/sh-hayden.png) <br>
 Side note: learned a few shortcuts when using vim to make editing files easier and quicker, such as “dG” to clear the entire file, and “u” to undo actions.
-</body>
-</html>
