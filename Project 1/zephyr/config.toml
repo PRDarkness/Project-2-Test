@@ -1,0 +1,4 @@
+baseURL = "zephyr90.com"
+languageCode = "en-us"
+title = "Zephyr"
+theme = "hugo-lamp"
