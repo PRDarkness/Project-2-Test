@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Taga on Zephyr</title>
+    <link>zephyr90.com/tags/taga/</link>
+    <description>Recent content in Taga on Zephyr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 13 Sep 2018 11:05:26 -0700</lastBuildDate>
+    
+	<atom:link href="zephyr90.com/tags/taga/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Project 1 - Post 1: Daniel</title>
+      <link>zephyr90.com/post/project1p1-daniel/</link>
+      <pubDate>Thu, 13 Sep 2018 11:05:26 -0700</pubDate>
+      
+      <guid>zephyr90.com/post/project1p1-daniel/</guid>
+      <description>Daniel Hirahoka:  - For Project 1 I was assigned the task to assist with deleting the Route53 information in order to prepare for Project 1. After doing so I was additionally tasked with working and researching Ansible in order to complete the Ansible portion of the Project. So for the next couple of days I looked into installing and setting up virtual machines on my computer in order to practice and see how Ansible would work.</description>
+    </item>
+    
+    <item>
+      <title>Project 1 - Post 1: Hayden</title>
+      <link>zephyr90.com/post/project1p1-hayden/</link>
+      <pubDate>Thu, 13 Sep 2018 11:05:21 -0700</pubDate>
+      
+      <guid>zephyr90.com/post/project1p1-hayden/</guid>
+      <description>Hayden Wilcox:
+Assigned Task: Research Ansible and Practice various components and concepts: · Issues arose when attempting to update Oracle Virtual Box, had to delete previous Ubuntu virtual machine and reinstall. · Reinstalled git related commands and re-accessed GitHub to download branches o Due to adding two-factor authentification onto GitHub, I had to learn how to generate a Personal Access Token to allow myself access onto the site via ssh: · Cloned branch to be used with Ansible · Setup a personal AWS ubuntu server, using default settings.</description>
+    </item>
+    
+    <item>
+      <title>Project 1 - Post 1: Neel</title>
+      <link>zephyr90.com/post/project1p1-neel/</link>
+      <pubDate>Thu, 13 Sep 2018 11:05:17 -0700</pubDate>
+      
+      <guid>zephyr90.com/post/project1p1-neel/</guid>
+      <description>Neel Patel:  Tasks: - Create 1 IAM user in aws with admin access - Install terraform in windows - Create VPC - Create public/private subnets - Create internet gateway - Create public route table/Associate public subnets to public route table - Create bastion ec2 instance with ssh access only. 1. Create 1 IAM user in aws with admin access - zephyr user was created with programmatic access so I can get the Access key and Secret Key to access aws through terraform.</description>
+    </item>
+    
+    <item>
+      <title>Project 1 - Post 1: Tonny</title>
+      <link>zephyr90.com/post/project1p1-tonny/</link>
+      <pubDate>Thu, 13 Sep 2018 11:05:09 -0700</pubDate>
+      
+      <guid>zephyr90.com/post/project1p1-tonny/</guid>
+      <description>Tonny Wong:  Assigned duties for this week: - Learn IAM Terraform - Edit Blog post in Hugo - Configure issues in Hugo - Test IAM script for Terraform. - Learn Editing GitHub Markdown Files. Learning to setup IAM user in Terraform: I have went to Terraform tutorials and guides in order to proceed with creating AWS IAM in Terraform: - To create a AWS IAM in Terraform we would need to create a file with the extension of .</description>
+    </item>
+    
+    <item>
+      <title>Second Post - Neel Patel</title>
+      <link>zephyr90.com/post/project0p2-neel/</link>
+      <pubDate>Thu, 06 Sep 2018 19:02:38 +0000</pubDate>
+      
+      <guid>zephyr90.com/post/project0p2-neel/</guid>
+      <description>For second week of project, I was tasked to install Nginx web server on our EC2 instance created by Hayden. For Nginx to communicate through HTTP/HTTPS I had to add few rules into the firewall-ufw so that communication between internet and web server is possible. After installing Nginx I started working on creating a tutorial documentation that goes through how to set up a VPC in AWS, how to create public subnets and private subnets; how to create route tables, how to associate the subnets into appropriate route table, and how to add a new rule in public route able so that communication from outside is accepted.</description>
+    </item>
+    
+    <item>
+      <title>Second Post - Daniel Hirahoka</title>
+      <link>zephyr90.com/post/project0p2-daniel/</link>
+      <pubDate>Wed, 05 Sep 2018 18:53:39 +0000</pubDate>
+      
+      <guid>zephyr90.com/post/project0p2-daniel/</guid>
+      <description>The second week of Project Zero consisted of finalizing and finishing what needed to be done to begin the final tasks of documentation and the presentation. I went forth and did route 53 for the project. To setup the domain I had to log into the AWS IAM account and then find where the Route 53 option was. After finding the Route 53 section in services I had to create a Hosted Zone that would be linked to our Domain that we had purchased from Godaddy.</description>
+    </item>
+    
+    <item>
+      <title>Second Post - Hayden Wilcox</title>
+      <link>zephyr90.com/post/project0p2-hayden/</link>
+      <pubDate>Wed, 05 Sep 2018 18:42:57 +0000</pubDate>
+      
+      <guid>zephyr90.com/post/project0p2-hayden/</guid>
+      <description>For Week 2 of Project 0, I was assigned the task of setting up the Elastic Cloud Computer (EC2) server for our website. I have had experience setting up Linux and Ubuntu virtual machines on Oracle VM in the past, but never on AWS. Thankfully though, the procedures were mostly the same and intuitive. I kept most things default but changed a few key features to suit the needs of our group’s project.</description>
+    </item>
+    
+    <item>
+      <title>Second Post - Tonny Wong</title>
+      <link>zephyr90.com/post/project0p2-tonny/</link>
+      <pubDate>Wed, 05 Sep 2018 18:41:01 +0000</pubDate>
+      
+      <guid>zephyr90.com/post/project0p2-tonny/</guid>
+      <description>For the second week of project 0, I have found out that the Hugo server will be held in Ubuntu. So I installed Hugo for the Ubuntu instance. The first attempt to move the files from my Windows version of Hugo to Ubuntu is through the zip file and proceed to unzip the files in the site. When I tried to run the Hugo server it seems that there was errors all over the theme files and did not run the Hugo server properly.</description>
+    </item>
+    
+    <item>
+      <title>First Post - Hayden Wilcox</title>
+      <link>zephyr90.com/post/project0p1-hayden/</link>
+      <pubDate>Thu, 30 Aug 2018 23:35:31 -0700</pubDate>
+      
+      <guid>zephyr90.com/post/project0p1-hayden/</guid>
+      <description>Hayden Wilcox:
+At the beginning of Project 0, my main issue was my lack of knowledge with the programs and systems we are supposed to be using. This presented me with my first task: to familiarize myself with them. Specifically, I was tasked with learning how to utilize GitHub and Git, to the extent that I could teach my teammates. To begin, I made accounts for GitHub, Amazon Web Services and Slack.</description>
+    </item>
+    
+    <item>
+      <title>First Post - Tonny Wong</title>
+      <link>zephyr90.com/post/project0p1-tonny/</link>
+      <pubDate>Thu, 30 Aug 2018 23:35:31 -0700</pubDate>
+      
+      <guid>zephyr90.com/post/project0p1-tonny/</guid>
+      <description>Tonny Wong:
+For Project 0 i was placed as the group leader and have created tasks for the team members to select. I have placed myself to create the blog and as I was creating the blog i have encountered issues such as packet and commands that were invalid on my computer because I have to download these packets to continue further with the blog. At a point some of the commands were unknown for the command prompt so I have downloaded cmder to solve this issue, having to carefully track my steps so that I would not repeat any unnecessary steps that required more time.</description>
+    </item>
+    
+    <item>
+      <title>First Post - Daniel Hirahoka</title>
+      <link>zephyr90.com/post/project0p1-daniel/</link>
+      <pubDate>Thu, 30 Aug 2018 23:35:24 -0700</pubDate>
+      
+      <guid>zephyr90.com/post/project0p1-daniel/</guid>
+      <description>Daniel Hirahoka:
+When beginning Project 0 I was tasked to read and Identify the requirements for the Slack component of the Project. Not much was required to set up the Slack account as the link was provided for the room. After clicking the link and setting up an account I then proceeded to create a channel for our team to communicate in. Creating this channel was straight forward, all I had to do was click the &amp;ldquo;+&amp;rdquo; sign near the channels tab and fill in some information that would help us identify this was meant for our team.</description>
+    </item>
+    
+    <item>
+      <title>First Post - Neel Patel</title>
+      <link>zephyr90.com/post/project0p1-neel/</link>
+      <pubDate>Thu, 30 Aug 2018 11:45:49 -0700</pubDate>
+      
+      <guid>zephyr90.com/post/project0p1-neel/</guid>
+      <description>Neel Patel:
+Beginning of project, first thing I create was an organization for AWS to link all four AWS accounts of team members into one single AWS account. By putting all the account into an organization, we are able to spend $500 credits instead of single $100 credit we as student get from AWS Educate. After that, I purchased a domain (Zephyr90.com) from godaddy since I was familiar with it. After that started working on creating the Virtual Private Cloud (VPC) which create a virtual network for us and to install instances inside that VPC.</description>
+    </item>
+    
+  </channel>
+</rss>
