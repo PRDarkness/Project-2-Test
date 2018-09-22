@@ -10,28 +10,28 @@
     
 
     
-    <title>
-  Tag → tagb
-  
-   | Zephyr
-</title>
+    <title>Project 1 Post 2: Neel</title>
 
     
     
 
 
 
+  
+  
+  <meta name="author" content="Author Name" />
+  <meta name="description" content="Tasks: Creating Nat Instance Creating ALB
+Creating Nat instance: - During the second week of the project 1 i started working on creating an Nat instances so that when Tonny bring up the private web servers they can access to internet to do updates and etc. - The first thing i did was create a security group that allows port 80 and 443 from the private subnets as inbound. Port 22 for SSH from anywhere.">
 
   
-  <meta name="author" content="" />
-  <meta name="description" content="" />
-
   
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@gohugoio" />
-  <meta name="twitter:title" content="Zephyr" />
-  <meta name="twitter:description" content="" />
-  <meta name="twitter:image" content="/img/avatar.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@gohugoio" />
+    <meta name="twitter:title" content="Project 1 Post 2: Neel" />
+    <meta name="twitter:description" content="Tasks: Creating Nat Instance Creating ALB
+Creating Nat instance: - During the second week of the project 1 i started working on creating an Nat instances so that when Tonny bring up the private web servers they can access to internet to do updates and etc. - The first thing i did was create a security group that allows port 80 and 443 from the private subnets as inbound. Port 22 for SSH from anywhere." />
+    <meta name="twitter:image" content="/img/cover.jpg" />
+  
 
 
 
@@ -39,7 +39,7 @@
 <meta name="generator" content="Hugo 0.48">
 
 
-<link rel="canonical" href="zephyr90.com/tags/tagb/">
+<link rel="canonical" href="zephyr90.com/post/project1p2-neel/">
 <link rel="alternative" href="/index.xml" title="Zephyr" type="application/atom+xml">
 
 
@@ -128,162 +128,47 @@
 
 </header>
 
-  <section class="main entry-list">
-    <header class="list-header">
-      
-      
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">Project 1 Post 2: Neel</h1>
+      <p class="entry-meta"><span class="entry-time">Sep 21, 2018</span> 2 min read</p>
     </header>
     
-    
-      
-        <article class="entry-single">
-  
-    <a href="zephyr90.com/post/project0p2-tonny/" title="Second Post - Tonny Wong">
-      <amp-img alt="Second Post - Tonny Wong"
-        height="244"
-        layout="fixed-height"
-        class="entry-cover"
-        src="/img/cover.jpg">
-      </amp-img>
-    </a>
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="zephyr90.com/post/project0p2-tonny/" title="Second Post - Tonny Wong" class="entry-link">Second Post - Tonny Wong</a></h3>
-  </header>
 
-  <p class="entry-summary">For the second week of project 0, I have found out that the Hugo server will be held in Ubuntu. So I installed Hugo for the Ubuntu instance. The first attempt to move the files from my Windows version of Hugo to Ubuntu is through the zip file and proceed to unzip the files in the site. When I tried to run the Hugo server it seems that there was errors all over the theme files and did not run the Hugo server properly.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Sep 5, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=zephyr90.com%2fpost%2fproject0p2-tonny%2f" title="Share on Facebook"></a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Second%20Post%20-%20Tonny%20Wong&amp;url=zephyr90.com%2fpost%2fproject0p2-tonny%2f" title="Share on Twitter"></a>
-      <a class="share share-google" target="_blank" href="https://plus.google.com/share?url=Second%20Post%20-%20Tonny%20Wong&amp;url=zephyr90.com%2fpost%2fproject0p2-tonny%2f" title="Share on Google+"></a>
-    </div>
-  </footer>
+    <article class="post-content"><p>Tasks: Creating Nat Instance
+           Creating ALB</p>
+
+<pre><code>Creating Nat instance:
+    - During the second week of the project 1 i started working on creating an Nat instances so that when Tonny bring up the private web servers they can access to internet to do updates and etc.
+    - The first thing i did was create a security group that allows port 80 and 443 from the private subnets as inbound. Port 22 for SSH from anywhere. Outbound for 80,443. I created this security group using the guide provided by aws.
+    - After creating the Nat security group i create aws_instance resource to create already configured nat instance by aws. Since Nat instance has to traffic both ways i had to disable the source/destination check.
+    - After the instance i generated an elastic ip for the nat instance.
+Creating ALB
+    - After Tonny had the two private web servers up and running my next task was to create Application Load Balancer.
+    - When creating the load balancer i was able to make it work by doing it manually using aws console but was having error with terraform.
+    - I asked one of the other team in the class who said that terraform should be exactly like how i did it using aws console, so after that first i created alb security group that has port 80 open for all inbound traffic. All traffic for outbound.
+    - After creating the security group i created the Application load balancer that was public facing. Also reading about alb on aws documentation it said that we have to assign our public subnets instead of our private subnets.
+    - After creating the alb i created a target group that would listen on port 80 for now with health check configuration i got from aws console.
+    - I added a listener on port that would forward any traffic coming on port 80 to the target group but later it would redirect to port 443.
+    - Then i attached the private instances to the alb target group using port 80.
+</code></pre>
 </article>
-
+    <footer class="post-footer">
       
-        <article class="entry-single">
-  
-    <a href="zephyr90.com/post/project0p1-tonny/" title="First Post - Tonny Wong">
-      <amp-img alt="First Post - Tonny Wong"
-        height="244"
-        layout="fixed-height"
-        class="entry-cover"
-        src="/img/cover.jpg">
-      </amp-img>
-    </a>
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="zephyr90.com/post/project0p1-tonny/" title="First Post - Tonny Wong" class="entry-link">First Post - Tonny Wong</a></h3>
-  </header>
-
-  <p class="entry-summary">Tonny Wong:
-For Project 0 i was placed as the group leader and have created tasks for the team members to select. I have placed myself to create the blog and as I was creating the blog i have encountered issues such as packet and commands that were invalid on my computer because I have to download these packets to continue further with the blog. At a point some of the commands were unknown for the command prompt so I have downloaded cmder to solve this issue, having to carefully track my steps so that I would not repeat any unnecessary steps that required more time.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Aug 30, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=zephyr90.com%2fpost%2fproject0p1-tonny%2f" title="Share on Facebook"></a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=First%20Post%20-%20Tonny%20Wong&amp;url=zephyr90.com%2fpost%2fproject0p1-tonny%2f" title="Share on Twitter"></a>
-      <a class="share share-google" target="_blank" href="https://plus.google.com/share?url=First%20Post%20-%20Tonny%20Wong&amp;url=zephyr90.com%2fpost%2fproject0p1-tonny%2f" title="Share on Google+"></a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-    <a href="zephyr90.com/post/project0p1-hayden/" title="First Post - Hayden Wilcox">
-      <amp-img alt="First Post - Hayden Wilcox"
-        height="244"
-        layout="fixed-height"
-        class="entry-cover"
-        src="/img/cover.jpg">
-      </amp-img>
-    </a>
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="zephyr90.com/post/project0p1-hayden/" title="First Post - Hayden Wilcox" class="entry-link">First Post - Hayden Wilcox</a></h3>
-  </header>
-
-  <p class="entry-summary">Hayden Wilcox:
-At the beginning of Project 0, my main issue was my lack of knowledge with the programs and systems we are supposed to be using. This presented me with my first task: to familiarize myself with them. Specifically, I was tasked with learning how to utilize GitHub and Git, to the extent that I could teach my teammates. To begin, I made accounts for GitHub, Amazon Web Services and Slack.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Aug 30, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=zephyr90.com%2fpost%2fproject0p1-hayden%2f" title="Share on Facebook"></a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=First%20Post%20-%20Hayden%20Wilcox&amp;url=zephyr90.com%2fpost%2fproject0p1-hayden%2f" title="Share on Twitter"></a>
-      <a class="share share-google" target="_blank" href="https://plus.google.com/share?url=First%20Post%20-%20Hayden%20Wilcox&amp;url=zephyr90.com%2fpost%2fproject0p1-hayden%2f" title="Share on Google+"></a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-    <a href="zephyr90.com/post/project0p1-daniel/" title="First Post - Daniel Hirahoka">
-      <amp-img alt="First Post - Daniel Hirahoka"
-        height="244"
-        layout="fixed-height"
-        class="entry-cover"
-        src="/img/cover.jpg">
-      </amp-img>
-    </a>
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="zephyr90.com/post/project0p1-daniel/" title="First Post - Daniel Hirahoka" class="entry-link">First Post - Daniel Hirahoka</a></h3>
-  </header>
-
-  <p class="entry-summary">Daniel Hirahoka:
-When beginning Project 0 I was tasked to read and Identify the requirements for the Slack component of the Project. Not much was required to set up the Slack account as the link was provided for the room. After clicking the link and setting up an account I then proceeded to create a channel for our team to communicate in. Creating this channel was straight forward, all I had to do was click the “&#43;” sign near the channels tab and fill in some information that would help us identify this was meant for our team.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Aug 30, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=zephyr90.com%2fpost%2fproject0p1-daniel%2f" title="Share on Facebook"></a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=First%20Post%20-%20Daniel%20Hirahoka&amp;url=zephyr90.com%2fpost%2fproject0p1-daniel%2f" title="Share on Twitter"></a>
-      <a class="share share-google" target="_blank" href="https://plus.google.com/share?url=First%20Post%20-%20Daniel%20Hirahoka&amp;url=zephyr90.com%2fpost%2fproject0p1-daniel%2f" title="Share on Google+"></a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-    <a href="zephyr90.com/post/project0p1-neel/" title="First Post - Neel Patel">
-      <amp-img alt="First Post - Neel Patel"
-        height="244"
-        layout="fixed-height"
-        class="entry-cover"
-        src="/img/cover.jpg">
-      </amp-img>
-    </a>
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="zephyr90.com/post/project0p1-neel/" title="First Post - Neel Patel" class="entry-link">First Post - Neel Patel</a></h3>
-  </header>
-
-  <p class="entry-summary">Neel Patel:
-Beginning of project, first thing I create was an organization for AWS to link all four AWS accounts of team members into one single AWS account. By putting all the account into an organization, we are able to spend $500 credits instead of single $100 credit we as student get from AWS Educate. After that, I purchased a domain (Zephyr90.com) from godaddy since I was familiar with it. After that started working on creating the Virtual Private Cloud (VPC) which create a virtual network for us and to install instances inside that VPC.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Aug 30, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=zephyr90.com%2fpost%2fproject0p1-neel%2f" title="Share on Facebook"></a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=First%20Post%20-%20Neel%20Patel&amp;url=zephyr90.com%2fpost%2fproject0p1-neel%2f" title="Share on Twitter"></a>
-      <a class="share share-google" target="_blank" href="https://plus.google.com/share?url=First%20Post%20-%20Neel%20Patel&amp;url=zephyr90.com%2fpost%2fproject0p1-neel%2f" title="Share on Google+"></a>
-    </div>
-  </footer>
-</article>
-
-      
-    
-    
-      <nav class="pagination">
+      <ul class="post-tags">
         
-          <a class="pagination-btn" href="zephyr90.com/tags/tagb/">← Newer Posts</a>
+          <li class="post-tag"><a href="/tags/taga"><span class="tag">TagA</span></a></li>
         
+          <li class="post-tag"><a href="/tags/tagb"><span class="tag">TagB</span></a></li>
         
-      </nav>
-    
+      </ul>
+      
+      <div class="sharing">
+        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=zephyr90.com%2fpost%2fproject1p2-neel%2f" title="Share on Facebook"></a>
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Project%201%20Post%202%3a%20Neel&amp;url=zephyr90.com%2fpost%2fproject1p2-neel%2f" title="Share on Twitter"></a>
+        <a class="share share-google" target="_blank" href="https://plus.google.com/share?url=Project%201%20Post%202%3a%20Neel&amp;url=zephyr90.com%2fpost%2fproject1p2-neel%2f" title="Share on Google+"></a>
+      </div>
+    </footer>
   </section>
   <footer class="footer">
   <p>Copyright © 2018 Zephyr</p>

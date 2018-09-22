@@ -10,28 +10,26 @@
     
 
     
-    <title>
-  Tag → tagb
-  
-   | Zephyr
-</title>
+    <title>Project 1 Post 2: Daniel</title>
 
     
     
 
 
 
+  
+  
+  <meta name="author" content="Author Name" />
+  <meta name="description" content="As mentioned in my first blog post the main thing I was trying to do is establish the Ansible playbook so that it was capable of configuring the server and then deploy it automatically. In order to do the task I needed to familiarize myself more with AWS so that I would be able to properly translate what I think are the actions needed into an Ansible playbook. After setting up an EC2 instance I began looking into the Ansible playbook.">
 
   
-  <meta name="author" content="" />
-  <meta name="description" content="" />
-
   
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@gohugoio" />
-  <meta name="twitter:title" content="Zephyr" />
-  <meta name="twitter:description" content="" />
-  <meta name="twitter:image" content="/img/avatar.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@gohugoio" />
+    <meta name="twitter:title" content="Project 1 Post 2: Daniel" />
+    <meta name="twitter:description" content="As mentioned in my first blog post the main thing I was trying to do is establish the Ansible playbook so that it was capable of configuring the server and then deploy it automatically. In order to do the task I needed to familiarize myself more with AWS so that I would be able to properly translate what I think are the actions needed into an Ansible playbook. After setting up an EC2 instance I began looking into the Ansible playbook." />
+    <meta name="twitter:image" content="/img/cover.jpg" />
+  
 
 
 
@@ -39,7 +37,7 @@
 <meta name="generator" content="Hugo 0.48">
 
 
-<link rel="canonical" href="zephyr90.com/tags/tagb/">
+<link rel="canonical" href="zephyr90.com/post/project1p2-daniel/">
 <link rel="alternative" href="/index.xml" title="Zephyr" type="application/atom+xml">
 
 
@@ -128,162 +126,60 @@
 
 </header>
 
-  <section class="main entry-list">
-    <header class="list-header">
-      
-      
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">Project 1 Post 2: Daniel</h1>
+      <p class="entry-meta"><span class="entry-time">Sep 21, 2018</span> 5 min read</p>
     </header>
     
-    
-      
-        <article class="entry-single">
-  
-    <a href="zephyr90.com/post/project0p2-tonny/" title="Second Post - Tonny Wong">
-      <amp-img alt="Second Post - Tonny Wong"
-        height="244"
-        layout="fixed-height"
-        class="entry-cover"
-        src="/img/cover.jpg">
-      </amp-img>
-    </a>
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="zephyr90.com/post/project0p2-tonny/" title="Second Post - Tonny Wong" class="entry-link">Second Post - Tonny Wong</a></h3>
-  </header>
 
-  <p class="entry-summary">For the second week of project 0, I have found out that the Hugo server will be held in Ubuntu. So I installed Hugo for the Ubuntu instance. The first attempt to move the files from my Windows version of Hugo to Ubuntu is through the zip file and proceed to unzip the files in the site. When I tried to run the Hugo server it seems that there was errors all over the theme files and did not run the Hugo server properly.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Sep 5, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=zephyr90.com%2fpost%2fproject0p2-tonny%2f" title="Share on Facebook"></a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Second%20Post%20-%20Tonny%20Wong&amp;url=zephyr90.com%2fpost%2fproject0p2-tonny%2f" title="Share on Twitter"></a>
-      <a class="share share-google" target="_blank" href="https://plus.google.com/share?url=Second%20Post%20-%20Tonny%20Wong&amp;url=zephyr90.com%2fpost%2fproject0p2-tonny%2f" title="Share on Google+"></a>
-    </div>
-  </footer>
+    <article class="post-content"><p>As mentioned in my first blog post the main thing I was trying to do is establish the Ansible playbook so that it was capable of configuring the server and then deploy it automatically. In order to do the task I needed to familiarize myself more with AWS so that I would be able to properly translate what I think are the actions needed into an Ansible playbook. After setting up an EC2 instance I began looking into the Ansible playbook.</p>
+
+<p>To do the Web server setup we would have to install Nginx into the appropriate instance. The playbook for this was relatively simple.</p>
+
+<pre><code>---
+- hosts: webserver
+  become: yes
+  tasks:
+    - name: Installs Nginx web server
+      apt: pkg=nginx state=installed update_cache=true
+      notify:
+        - start nginx
+  handlers:
+    - name: start Nginx
+      service: name=nginx state=started
+</code></pre>
+
+<p>Ansible works using &ldquo;.yaml&rdquo; files which uses a language that is easy to read. Within these playbooks you have these parameters that you have set so the playbook knows who to reference and what target you want. From this understanding you begin the playbook by defining a host which would be the target instance you would want to apply this playbook too. In this case &ldquo;webserver&rdquo; refers to a tag or group that is found in our Ansible folder. The file it refers to in our current case is our &ldquo;host&rdquo; file which contains a group called &ldquo;webserver&rdquo; that has listed the instance with its ip and the user I want to join in as, ubuntu. While we are SSh&rsquo;d into the instance we want to be able to do the things we want so we use &ldquo;become&rdquo; which lets us have privilege while in the target location. At this point we are running into issues where the playbook isn&rsquo;t being allowed in using SSH.</p>
+
+<p>In order to troubleshoot this issue we tried to analyze the error we received &ldquo;WARNING: unprotected private key file&rdquo; which was an easy fix. We had to go to where the key was located and change the permission using the command sudo chmod 0600 /path/to/key.</p>
+
+<p>The second issue we receive was failed public key authentication. Now at the time this worked on my instance because I was able to go in and put in the public key in the authorized key file and then SSH in but this wasn&rsquo;t as simple. We had many instances running and we were running Ansible from inside the bastion instance trying to SSH into our webserver instance. Our group members were stumped with this issue and another one along side it that was prevented people from accessing our instances through the bastion using regular SSH. Both issues seemed to resolve using a common .pem file that we had to put in the terraform config file. Doing so created instances with a common authentication method and allowed for people to SSH in using a .pem file fixing both issues from my understanding.</p>
+
+<p>After being able to instance into the webserver from the bastion with Ansible we ran the playbook running into our final issue. The playbook wasn’t able to run properly on the target because it seemed to have been missing python requirements. Looking into it we had two solutions we could work with, one short term and one long term. If we wanted to test our terraform portion it would basically destroy the instances and remake them potentially running into the same issue. In order to address this we would add a pre task to our playbook that checks and installs python if it was missing before running the rest of the tasks. The short term solution was to manually install python to check if the playbook would run. We ended up first doing the short term goal and seeing if the nginx installed on the instance, which it successfully did!</p>
+
+<p>The second task we needed to do was to deploy our server which is something I was very unfamiliar with and had a hard time finding a solution for. It&rsquo;s hard to admit but I did spend more hours than I would have looking for how to do this as easily as I could and was unsuccessful with finding a solution. I had discussed it with my peers and they suggested running a bash script that basically used did the Hugo work and the zipped the files need and then Ansible would grab that and deploy. Discussing it with everyone this seemed like a good solution and we created a bash script that did that and the last Ansible playbook that would grab what was created and push the files onto the instance. After creating the playbook and script we tested it out and ran into a issue.</p>
+
+<p>We had realized that our files for our blog all had a config that would point to our local host instead of the domain URL. Meaning that it wouldn’t show up on our domain unless we changed that, so we had to recreated and edit all the files to show our current domain permanently. We then had to change the script to target those modified files instead. We could still edit and create blogs normally, nothing really changed except that one variable. After words it seemed to work without issue.</p>
+
+<p>During the Ansible research I also helped a little with the route53 portion of the Terraform. I had to add an alias entry to the Route53 using the DNS name of the application load balancer.</p>
 </article>
-
+    <footer class="post-footer">
       
-        <article class="entry-single">
-  
-    <a href="zephyr90.com/post/project0p1-tonny/" title="First Post - Tonny Wong">
-      <amp-img alt="First Post - Tonny Wong"
-        height="244"
-        layout="fixed-height"
-        class="entry-cover"
-        src="/img/cover.jpg">
-      </amp-img>
-    </a>
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="zephyr90.com/post/project0p1-tonny/" title="First Post - Tonny Wong" class="entry-link">First Post - Tonny Wong</a></h3>
-  </header>
-
-  <p class="entry-summary">Tonny Wong:
-For Project 0 i was placed as the group leader and have created tasks for the team members to select. I have placed myself to create the blog and as I was creating the blog i have encountered issues such as packet and commands that were invalid on my computer because I have to download these packets to continue further with the blog. At a point some of the commands were unknown for the command prompt so I have downloaded cmder to solve this issue, having to carefully track my steps so that I would not repeat any unnecessary steps that required more time.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Aug 30, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=zephyr90.com%2fpost%2fproject0p1-tonny%2f" title="Share on Facebook"></a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=First%20Post%20-%20Tonny%20Wong&amp;url=zephyr90.com%2fpost%2fproject0p1-tonny%2f" title="Share on Twitter"></a>
-      <a class="share share-google" target="_blank" href="https://plus.google.com/share?url=First%20Post%20-%20Tonny%20Wong&amp;url=zephyr90.com%2fpost%2fproject0p1-tonny%2f" title="Share on Google+"></a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-    <a href="zephyr90.com/post/project0p1-hayden/" title="First Post - Hayden Wilcox">
-      <amp-img alt="First Post - Hayden Wilcox"
-        height="244"
-        layout="fixed-height"
-        class="entry-cover"
-        src="/img/cover.jpg">
-      </amp-img>
-    </a>
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="zephyr90.com/post/project0p1-hayden/" title="First Post - Hayden Wilcox" class="entry-link">First Post - Hayden Wilcox</a></h3>
-  </header>
-
-  <p class="entry-summary">Hayden Wilcox:
-At the beginning of Project 0, my main issue was my lack of knowledge with the programs and systems we are supposed to be using. This presented me with my first task: to familiarize myself with them. Specifically, I was tasked with learning how to utilize GitHub and Git, to the extent that I could teach my teammates. To begin, I made accounts for GitHub, Amazon Web Services and Slack.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Aug 30, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=zephyr90.com%2fpost%2fproject0p1-hayden%2f" title="Share on Facebook"></a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=First%20Post%20-%20Hayden%20Wilcox&amp;url=zephyr90.com%2fpost%2fproject0p1-hayden%2f" title="Share on Twitter"></a>
-      <a class="share share-google" target="_blank" href="https://plus.google.com/share?url=First%20Post%20-%20Hayden%20Wilcox&amp;url=zephyr90.com%2fpost%2fproject0p1-hayden%2f" title="Share on Google+"></a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-    <a href="zephyr90.com/post/project0p1-daniel/" title="First Post - Daniel Hirahoka">
-      <amp-img alt="First Post - Daniel Hirahoka"
-        height="244"
-        layout="fixed-height"
-        class="entry-cover"
-        src="/img/cover.jpg">
-      </amp-img>
-    </a>
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="zephyr90.com/post/project0p1-daniel/" title="First Post - Daniel Hirahoka" class="entry-link">First Post - Daniel Hirahoka</a></h3>
-  </header>
-
-  <p class="entry-summary">Daniel Hirahoka:
-When beginning Project 0 I was tasked to read and Identify the requirements for the Slack component of the Project. Not much was required to set up the Slack account as the link was provided for the room. After clicking the link and setting up an account I then proceeded to create a channel for our team to communicate in. Creating this channel was straight forward, all I had to do was click the “&#43;” sign near the channels tab and fill in some information that would help us identify this was meant for our team.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Aug 30, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=zephyr90.com%2fpost%2fproject0p1-daniel%2f" title="Share on Facebook"></a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=First%20Post%20-%20Daniel%20Hirahoka&amp;url=zephyr90.com%2fpost%2fproject0p1-daniel%2f" title="Share on Twitter"></a>
-      <a class="share share-google" target="_blank" href="https://plus.google.com/share?url=First%20Post%20-%20Daniel%20Hirahoka&amp;url=zephyr90.com%2fpost%2fproject0p1-daniel%2f" title="Share on Google+"></a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-    <a href="zephyr90.com/post/project0p1-neel/" title="First Post - Neel Patel">
-      <amp-img alt="First Post - Neel Patel"
-        height="244"
-        layout="fixed-height"
-        class="entry-cover"
-        src="/img/cover.jpg">
-      </amp-img>
-    </a>
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="zephyr90.com/post/project0p1-neel/" title="First Post - Neel Patel" class="entry-link">First Post - Neel Patel</a></h3>
-  </header>
-
-  <p class="entry-summary">Neel Patel:
-Beginning of project, first thing I create was an organization for AWS to link all four AWS accounts of team members into one single AWS account. By putting all the account into an organization, we are able to spend $500 credits instead of single $100 credit we as student get from AWS Educate. After that, I purchased a domain (Zephyr90.com) from godaddy since I was familiar with it. After that started working on creating the Virtual Private Cloud (VPC) which create a virtual network for us and to install instances inside that VPC.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Aug 30, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=zephyr90.com%2fpost%2fproject0p1-neel%2f" title="Share on Facebook"></a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=First%20Post%20-%20Neel%20Patel&amp;url=zephyr90.com%2fpost%2fproject0p1-neel%2f" title="Share on Twitter"></a>
-      <a class="share share-google" target="_blank" href="https://plus.google.com/share?url=First%20Post%20-%20Neel%20Patel&amp;url=zephyr90.com%2fpost%2fproject0p1-neel%2f" title="Share on Google+"></a>
-    </div>
-  </footer>
-</article>
-
-      
-    
-    
-      <nav class="pagination">
+      <ul class="post-tags">
         
-          <a class="pagination-btn" href="zephyr90.com/tags/tagb/">← Newer Posts</a>
+          <li class="post-tag"><a href="/tags/taga"><span class="tag">TagA</span></a></li>
         
+          <li class="post-tag"><a href="/tags/tagb"><span class="tag">TagB</span></a></li>
         
-      </nav>
-    
+      </ul>
+      
+      <div class="sharing">
+        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=zephyr90.com%2fpost%2fproject1p2-daniel%2f" title="Share on Facebook"></a>
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Project%201%20Post%202%3a%20Daniel&amp;url=zephyr90.com%2fpost%2fproject1p2-daniel%2f" title="Share on Twitter"></a>
+        <a class="share share-google" target="_blank" href="https://plus.google.com/share?url=Project%201%20Post%202%3a%20Daniel&amp;url=zephyr90.com%2fpost%2fproject1p2-daniel%2f" title="Share on Google+"></a>
+      </div>
+    </footer>
   </section>
   <footer class="footer">
   <p>Copyright © 2018 Zephyr</p>

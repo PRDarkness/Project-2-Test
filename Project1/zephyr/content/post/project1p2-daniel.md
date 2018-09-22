@@ -1,5 +1,5 @@
 ---
-title: "Project1p2 Daniel"
+title: "Project 1 Post 2: Daniel"
 author: "Author Name"
 cover: "/img/cover.jpg"
 tags: ["tagA", "tagB"]
@@ -7,7 +7,7 @@ date: 2018-09-21T21:37:43-07:00
 draft: false
 ---
 
-Cut As mentioned in my first blog post the main thing I was trying to do is establish the Ansible playbook so that it was capable of configuring the server and then deploy it automatically. In order to do the task I needed to familiarize myself more with AWS so that I would be able to properly translate what I think are the actions needed into an Ansible playbook. After setting up an EC2 instance I began looking into the Ansible playbook.
+As mentioned in my first blog post the main thing I was trying to do is establish the Ansible playbook so that it was capable of configuring the server and then deploy it automatically. In order to do the task I needed to familiarize myself more with AWS so that I would be able to properly translate what I think are the actions needed into an Ansible playbook. After setting up an EC2 instance I began looking into the Ansible playbook.
 
 To do the Web server setup we would have to install Nginx into the appropriate instance. The playbook for this was relatively simple.
 
