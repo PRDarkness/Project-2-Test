@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Zephyr</title>
+    <link>zephyr90.com/tags/</link>
+    <description>Recent content in Tags on Zephyr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 13 Sep 2018 11:05:26 -0700</lastBuildDate>
+    
+	<atom:link href="zephyr90.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Taga</title>
+      <link>zephyr90.com/tags/taga/</link>
+      <pubDate>Thu, 13 Sep 2018 11:05:26 -0700</pubDate>
+      
+      <guid>zephyr90.com/tags/taga/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tagb</title>
+      <link>zephyr90.com/tags/tagb/</link>
+      <pubDate>Thu, 13 Sep 2018 11:05:26 -0700</pubDate>
+      
+      <guid>zephyr90.com/tags/tagb/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
