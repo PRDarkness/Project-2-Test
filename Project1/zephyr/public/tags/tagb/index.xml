@@ -6,10 +6,38 @@
     <description>Recent content in Tagb on Zephyr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Sep 2018 11:05:26 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 21 Sep 2018 21:43:29 -0700</lastBuildDate>
     
 	<atom:link href="zephyr90.com/tags/tagb/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Project1p2 Tonny</title>
+      <link>zephyr90.com/post/project1p2-tonny/</link>
+      <pubDate>Fri, 21 Sep 2018 21:43:29 -0700</pubDate>
+      
+      <guid>zephyr90.com/post/project1p2-tonny/</guid>
+      <description>Tonny Wong:  Duty this week: - Assist all members to understand markdown file and have the hugo site into their local machines so that they could also update and upload their post by themselves. - Worked on terraform (iam aws, backened, bucket, linux server) Duties done this week: - We have worked aim script to create all users necessary for the project: o Creating a group administrator o Creating iam policy to give admin access o Create the users o Add all users into a group - Terraform backend o Determines how state is loaded and how an operation is executed.</description>
+    </item>
+    
+    <item>
+      <title>Project 1 Post 2: Daniel</title>
+      <link>zephyr90.com/post/project1p2-daniel/</link>
+      <pubDate>Fri, 21 Sep 2018 21:37:43 -0700</pubDate>
+      
+      <guid>zephyr90.com/post/project1p2-daniel/</guid>
+      <description>As mentioned in my first blog post the main thing I was trying to do is establish the Ansible playbook so that it was capable of configuring the server and then deploy it automatically. In order to do the task I needed to familiarize myself more with AWS so that I would be able to properly translate what I think are the actions needed into an Ansible playbook. After setting up an EC2 instance I began looking into the Ansible playbook.</description>
+    </item>
+    
+    <item>
+      <title>Project 1 Post 2: Neel</title>
+      <link>zephyr90.com/post/project1p2-neel/</link>
+      <pubDate>Fri, 21 Sep 2018 17:25:57 -0700</pubDate>
+      
+      <guid>zephyr90.com/post/project1p2-neel/</guid>
+      <description>Tasks: Creating Nat Instance Creating ALB
+Creating Nat instance: - During the second week of the project 1 i started working on creating an Nat instances so that when Tonny bring up the private web servers they can access to internet to do updates and etc. - The first thing i did was create a security group that allows port 80 and 443 from the private subnets as inbound. Port 22 for SSH from anywhere.</description>
+    </item>
     
     <item>
       <title>Project 1 - Post 1: Daniel</title>
