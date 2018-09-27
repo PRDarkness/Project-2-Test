@@ -13,5 +13,8 @@ jobs:
            sudo wget https://github.com/gohugoio/hugo/releases/download/v0.49/hugo_0.49_Linux-64bit.deb
            sudo apt-get install dpkg
            sudo dpkg -i hugo_0.49_Linux-64bit.deb
-
+      - run: 
+          command: |
+            cd Project1/zephyr
+            ls -al
        
