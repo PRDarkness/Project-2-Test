@@ -1,8 +1,17 @@
 version: 2
 jobs:
   build:
-    docker: # use the docker executor type; machine and macos executors are also supported
-      - image: circleci/node:4.8.2 # the primary container, where your job's commands are run
+    machine: true
+    environment:
+      HUGO_BUILD_DIR: ~/hugo/public
     steps:
-      - checkout # check out the code in the project directory
-      - run: echo "hello world" # run the `echo` command
+      - run: sudo apt-get install git
+      - checkout #this is to checkout
+      - run:
+          name: install hugo 
+          command: |
+           sudo wget https://github.com/gohugoio/hugo/releases/download/v0.49/hugo_0.49_Linux-64bit.deb
+           sudo apt-get install dpkg
+           sudo dpkg -i hugo_0.49_Linux-64bit.deb
+
+       
