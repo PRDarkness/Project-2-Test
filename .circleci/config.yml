@@ -17,5 +17,5 @@ jobs:
           command: |
             cd Project1/zephyr
             ls -al
-            tar -cf zephyr.tar public/
+            tar -zcvf zephyr.tar.gz public/
        
